@@ -49,6 +49,7 @@
   },
   "scripts": {
     "build": "directus-extension build",
+    "prepublishOnly": "directus-extension build",
     "dev": "directus-extension dev",
     "link": "directus-extension link",
     "validate": "directus-extension validate",
