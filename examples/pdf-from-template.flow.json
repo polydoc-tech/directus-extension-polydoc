@@ -1,0 +1,39 @@
+{
+  "$note": "Render a saved PolyDoc template to a branded PDF and store it in Directus Files. Mirrors the n8n invoice-pdf-from-template template. Replace YOUR_TEMPLATE_ID with a template ID from the PolyDoc dashboard. Add your key as the POLYDOC_API_KEY env var (or set the operation's API Key).",
+  "flow": {
+    "name": "PolyDoc - PDF from template",
+    "icon": "picture_as_pdf",
+    "color": "#6644FF",
+    "description": "Render a saved template with data into a PDF and save it to Directus Files.",
+    "status": "active",
+    "trigger": "manual",
+    "accountability": "all",
+    "options": { "collections": [] }
+  },
+  "operations": [
+    {
+      "key": "polydoc_pdf",
+      "name": "PolyDoc PDF",
+      "type": "polydoc",
+      "position_x": 19,
+      "position_y": 1,
+      "options": {
+        "operation": "pdf",
+        "sourceType": "template",
+        "templateId": "YOUR_TEMPLATE_ID",
+        "templateData": {
+          "invoice_number": "INV-001",
+          "invoice_date": "2026-01-31",
+          "customer_name": "Acme Group",
+          "items": [
+            { "description": "Consulting", "quantity": 3, "price": 120 }
+          ]
+        },
+        "format": "A4",
+        "printBackground": true,
+        "deliveryMode": "directusFile",
+        "filename": "invoice.pdf"
+      }
+    }
+  ]
+}
