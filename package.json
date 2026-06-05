@@ -1,0 +1,71 @@
+{
+  "name": "directus-extension-polydoc",
+  "version": "0.1.0",
+  "description": "Directus Flow operation for PolyDoc: HTML/URL to PDF, screenshots, and EU e-invoices (Factur-X / ZUGFeRD). Saves the result straight into Directus Files.",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-extension",
+    "directus-extension-operation",
+    "polydoc",
+    "pdf",
+    "html-to-pdf",
+    "screenshot",
+    "e-invoice",
+    "factur-x",
+    "zugferd"
+  ],
+  "license": "MIT",
+  "homepage": "https://polydoc.tech",
+  "author": {
+    "name": "PolyDoc",
+    "email": "hello@polydoc.tech"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polydoc-tech/directus-extension-polydoc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/polydoc-tech/directus-extension-polydoc/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist"
+  ],
+  "directus:extension": {
+    "type": "operation",
+    "path": {
+      "app": "dist/app.js",
+      "api": "dist/api.js"
+    },
+    "source": {
+      "app": "src/app.ts",
+      "api": "src/api.ts"
+    },
+    "host": "^11.0.0"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension dev",
+    "link": "directus-extension link",
+    "validate": "directus-extension validate",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:integration": "vitest run test/integration.test.ts",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "scrub:check": "grep -rn $'\\u2014' src README.md examples && echo 'em-dash found' && exit 1 || echo 'no em-dash'"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "^17.1.4",
+    "@types/node": "^22.10.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.2.0"
+  }
+}
