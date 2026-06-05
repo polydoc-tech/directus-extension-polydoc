@@ -10,6 +10,8 @@ One operation, three use cases:
 
 Content can come from a **URL**, an inline **HTML** string, or a saved **template** (with Liquid `templateData`). By default the generated file is saved **straight into Directus Files** and the operation returns the new file's `fileId`, so a following operation can attach it to a record. You can also return it as **base64**, upload it to your **cloud storage** (presigned URL), or deliver it to a **webhook**.
 
+![PolyDoc operation in a Directus Flow](https://raw.githubusercontent.com/polydoc-tech/directus-extension-polydoc/main/media/polydoc-flow.png)
+
 ## Installation
 
 This is a standard (non-sandboxed) API extension, so it installs on self-hosted Directus:
