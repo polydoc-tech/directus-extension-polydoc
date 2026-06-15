@@ -51,7 +51,7 @@ export default defineOperationApi<Options>({
       );
     }
 
-    const baseUrl = ((options.baseUrl as string) || DEFAULT_BASE_URL).replace(/\/+$/, '');
+    const baseUrl = DEFAULT_BASE_URL.replace(/\/+$/, '');
     const sandbox = options.sandbox === true || options.sandbox === 'true';
     const operation = (options.operation as PolyDocOperation) ?? 'pdf';
     const sourceType = (options.sourceType as PolyDocSourceType) ?? 'url';

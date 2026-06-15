@@ -1,6 +1,5 @@
 import { defineOperationApp } from '@directus/extensions-sdk';
 import {
-  DEFAULT_BASE_URL,
   EINVOICE_PROFILES,
   EINVOICE_STANDARDS,
   IMAGE_TYPES,
@@ -490,17 +489,6 @@ export default defineOperationApp({
         note: 'Run in sandbox mode (higher quota, watermarked output).',
       },
       schema: { default_value: false },
-    },
-    {
-      field: 'baseUrl',
-      name: 'Base URL',
-      type: 'string',
-      meta: {
-        width: 'half',
-        interface: 'input',
-        note: 'Change only for self-hosted or staging.',
-      },
-      schema: { default_value: DEFAULT_BASE_URL },
     },
     {
       field: 'filename',
