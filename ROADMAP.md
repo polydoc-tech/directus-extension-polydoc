@@ -82,6 +82,10 @@ Airtable's field-mapping angle and n8n's binary download).
 | `url-screenshot-scheduled.json` | `examples/url-screenshot.flow.json` | Screenshot |
 | `einvoice-webhook-to-pdf.json` | `examples/einvoice-from-record.flow.json` | E-Invoice |
 
+Directus has no one-click Flow import, so `examples/import.mjs` (zero deps) POSTs a
+chosen example through the Flows API and wires the entry point. Validated against
+Directus 11 for all three angles.
+
 ---
 
 ## 2. Build checklist (this pass: build + verify locally only)
@@ -98,7 +102,7 @@ Airtable's field-mapping angle and n8n's binary download).
   `buildRequestBody` -> `fetch` (Bearer + X-Sandbox) -> deliver (Directus File /
   base64 / cloud / webhook), error extraction -> throw to reject path.
 - ☑ Live sandbox smoke `test/integration.test.ts` gated on `POLYDOC_API_KEY`.
-- ☑ Per-angle example flows, README, this roadmap.
+- ☑ Per-angle example flows + `examples/import.mjs` one-command loader, README, this roadmap.
 - ☑ `npm run build` + `directus-extension validate` + eslint + em-dash sweep.
 - ☐ Real-instance check: load `dist/` into a throwaway Directus, run each operation.
 
