@@ -55,6 +55,8 @@ function isPlainObject(value: unknown): value is Dict {
 export function mergeDeep(target: Dict, source: Dict): Dict {
   const out: Dict = { ...target };
   for (const [key, value] of Object.entries(source)) {
+    // The advanced JSON is user-supplied; skip prototype-pollution keys.
+    if (key === '__proto__' || key === 'constructor' || key === 'prototype') continue;
     if (isPlainObject(value) && isPlainObject(out[key])) {
       out[key] = mergeDeep(out[key] as Dict, value);
     } else {
