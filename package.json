@@ -1,6 +1,6 @@
 {
   "name": "directus-extension-polydoc",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Directus Flow operation for PolyDoc: HTML/URL to PDF, screenshots, and EU e-invoices (Factur-X / ZUGFeRD). Saves the result straight into Directus Files.",
   "keywords": [
     "directus",
