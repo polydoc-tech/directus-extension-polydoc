@@ -1,5 +1,5 @@
 {
-  "$note": "Render a saved PolyDoc template to a branded PDF and store it in Directus Files. Mirrors the n8n invoice-pdf-from-template template. Replace YOUR_TEMPLATE_ID with a template ID from the PolyDoc dashboard. Add your key as the POLYDOC_API_KEY env var (or set the operation's API Key).",
+  "$note": "Render a saved PolyDoc template to a branded PDF and store it in Directus Files. Mirrors the n8n invoice-pdf-from-template template. Replace YOUR_TEMPLATE_ID with a template ID from the PolyDoc dashboard. Load it with: DIRECTUS_URL=... DIRECTUS_TOKEN=... node examples/import.mjs pdf-from-template.flow.json. Add your key as the POLYDOC_API_KEY env var (or set the operation's API Key).",
   "flow": {
     "name": "PolyDoc - PDF from template",
     "icon": "picture_as_pdf",

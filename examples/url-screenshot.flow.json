@@ -1,5 +1,5 @@
 {
-  "$note": "Screenshot a URL and store the PNG in Directus Files. Mirrors the n8n url-screenshot template. Recreate in the Flow editor, or POST the flow then its operations via the Directus API. Add your key as the POLYDOC_API_KEY env var (or set the operation's API Key).",
+  "$note": "Screenshot a URL and store the PNG in Directus Files. Mirrors the n8n url-screenshot template. Load it with: DIRECTUS_URL=... DIRECTUS_TOKEN=... node examples/import.mjs url-screenshot.flow.json. Add your key as the POLYDOC_API_KEY env var (or set the operation's API Key).",
   "flow": {
     "name": "PolyDoc - URL to screenshot",
     "icon": "photo_camera",

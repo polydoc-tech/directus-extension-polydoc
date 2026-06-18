@@ -1,5 +1,5 @@
 {
-  "$note": "When an invoice record is created, generate a ZUGFeRD / Factur-X hybrid PDF and save it to Directus Files. Mirrors the n8n einvoice-webhook-to-pdf template. Assumes an 'invoices' collection whose records carry the invoice payload; the operation reads it from the trigger via {{ $trigger.payload.invoice }}. PolyDoc generates the compliant document; transmission (Peppol), archiving and reporting are separate. Add your key as the POLYDOC_API_KEY env var (or set the operation's API Key).",
+  "$note": "When an invoice record is created, generate a ZUGFeRD / Factur-X hybrid PDF and save it to Directus Files. Mirrors the n8n einvoice-webhook-to-pdf template. Assumes an 'invoices' collection whose records carry the invoice payload; the operation reads it from the trigger via {{ $trigger.payload.invoice }}. Load it with: DIRECTUS_URL=... DIRECTUS_TOKEN=... node examples/import.mjs einvoice-from-record.flow.json. PolyDoc generates the compliant document; transmission (Peppol), archiving and reporting are separate. Add your key as the POLYDOC_API_KEY env var (or set the operation's API Key).",
   "flow": {
     "name": "PolyDoc - Record to e-invoice",
     "icon": "receipt_long",

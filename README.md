@@ -38,11 +38,21 @@ Every operation has an **Advanced (JSON)** option that is deep-merged into the r
 
 ## Examples
 
-`examples/` holds three reference Flow definitions, one per angle (the Directus analog of the n8n template trio):
+`examples/` holds three ready-to-load Flow definitions, one per angle (the Directus analog of the n8n template trio):
 
 - `url-screenshot.flow.json` - screenshot a URL and store the PNG.
 - `pdf-from-template.flow.json` - render a saved template to a branded PDF.
 - `einvoice-from-record.flow.json` - turn a new invoice record into a ZUGFeRD / Factur-X PDF.
+
+Directus has no one-click Flow import, so `examples/import.mjs` (zero dependencies) POSTs a chosen example to your instance through the Flows API and wires it up:
+
+```bash
+DIRECTUS_URL=https://directus.example.com \
+DIRECTUS_TOKEN=<admin static token> \
+node examples/import.mjs pdf-from-template.flow.json
+```
+
+It prints the flow's admin URL when done. Open it, set your API key (or the `POLYDOC_API_KEY` env var), and run.
 
 ## Development
 
