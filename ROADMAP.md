@@ -108,12 +108,15 @@ Directus 11 for all three angles.
 
 ## Out of scope this pass (follow-ups, need external coordination)
 
-- Push the repo to `polydoc-tech/directus-extension-polydoc`, add OIDC trusted
-  publishing (`release.yml`), `npm publish`, Marketplace listing.
-- Update the docs guide
-  (`../../polydoc-web/documentation/docs/guides/integrations/directus.md`, currently
-  webhook-only) with the native-extension path.
-- Record Directus gotchas back into `../../CONNECTOR-PLAYBOOK.md`.
+- ☑ Pushed to `polydoc-tech/directus-extension-polydoc` (public), `release.yml`,
+  published `0.1.3` to npm with the `directus-extension-operation` keyword so it is
+  Marketplace-indexable.
+- ◐ Docs guide
+  (`../../polydoc-web/documentation/docs/guides/integrations/directus.md`) rewritten
+  to the native-extension path (install + 3 use cases + the `import.mjs` loader; old
+  webhook/presigned approach dropped). Prose-only for now; native-operation
+  screenshots pending a live capture session (see the user-facing shot list).
+- ☐ Record Directus gotchas back into `../../CONNECTOR-PLAYBOOK.md`.
 
 ## Notes / known unknowns
 
