@@ -517,7 +517,7 @@ export default defineOperationApp({
         width: 'full',
         interface: 'input-code',
         options: { language: 'json' },
-        note: 'Raw fields deep-merged into the request body for any API option not exposed above (pdf.watermark, pdf.pdfa, render, request).',
+        note: 'Raw fields deep-merged into the request body for any API option not exposed above (pdf.watermark, pdf.pdfa, pdf.ua, render, request).',
       },
       schema: { default_value: {} },
     },
