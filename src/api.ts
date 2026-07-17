@@ -8,7 +8,7 @@ import {
   type PolyDocParams,
   type PolyDocSourceType,
 } from './lib/build-request-body.js';
-import { DEFAULT_BASE_URL } from './lib/constants.js';
+import { DEFAULT_BASE_URL, REQUEST_TIMEOUT_MS } from './lib/constants.js';
 import { saveToDirectusFile } from './lib/deliver.js';
 
 type Options = Record<string, any>;
@@ -110,15 +110,26 @@ export default defineOperationApi<Options>({
 
     const { endpoint, body, isBinary } = buildRequestBody(params);
 
-    const res = await fetch(`${baseUrl}${endpoint}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-        'X-Sandbox': sandbox ? 'true' : 'false',
-      },
-      body: JSON.stringify(body),
-    });
+    let res: Response;
+    try {
+      res = await fetch(`${baseUrl}${endpoint}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${apiKey}`,
+          'X-Sandbox': sandbox ? 'true' : 'false',
+        },
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+      });
+    } catch (err) {
+      if (err instanceof Error && err.name === 'TimeoutError') {
+        throw new Error(
+          `PolyDoc request timed out after ${Math.round(REQUEST_TIMEOUT_MS / 1000)}s with no response.`,
+        );
+      }
+      throw err;
+    }
 
     const conversionId = res.headers.get('x-conversion-id') ?? undefined;
     const creditUsed = res.headers.get('x-credit-used') ?? undefined;
