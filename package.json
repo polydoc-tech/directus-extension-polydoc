@@ -61,7 +61,7 @@
     "scrub:check": "grep -rn $'\\u2014' src README.md examples && echo 'em-dash found' && exit 1 || echo 'no em-dash'"
   },
   "devDependencies": {
-    "@directus/extensions-sdk": "^17.1.4",
+    "@directus/extensions-sdk": "^18.0.0",
     "@types/node": "^22.10.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
