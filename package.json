@@ -63,8 +63,8 @@
   "devDependencies": {
     "@directus/extensions-sdk": "^17.1.4",
     "@types/node": "^22.10.0",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
     "eslint": "^8.57.0",
     "typescript": "^5.7.0",
     "vitest": "^4.0.0"
