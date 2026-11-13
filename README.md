@@ -62,7 +62,6 @@ npm run build      # @directus/extensions-sdk -> dist/app.js + dist/api.js
 npm run validate   # SDK conformance check
 npm run lint
 npm test           # unit tests (request body builder)
-npm run scrub:check
 ```
 
 Live smoke test against the real API (uses sandbox quota):
