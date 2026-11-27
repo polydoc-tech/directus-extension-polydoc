@@ -35,6 +35,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "provenance": true
+  },
   "directus:extension": {
     "type": "operation",
     "path": {
@@ -53,6 +56,7 @@
     "dev": "directus-extension dev",
     "link": "directus-extension link",
     "validate": "directus-extension validate",
+    "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:integration": "vitest run test/integration.test.ts",

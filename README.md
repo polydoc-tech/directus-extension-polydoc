@@ -60,6 +60,7 @@ It prints the flow's admin URL when done. Open it, set your API key (or the `POL
 npm install
 npm run build      # @directus/extensions-sdk -> dist/app.js + dist/api.js
 npm run validate   # SDK conformance check
+npm run typecheck  # tsc over src/ and test/
 npm run lint
 npm test           # unit tests (request body builder)
 ```
